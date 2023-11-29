@@ -41,8 +41,10 @@ const app = createApp(App);
 // 	baseUrl: "https://portal-api.mkthemedattractions.com.ph/api/",
 // });
 
+let url = "https://portal-api.mkthemedattractions.com.ph/"
+
 app.use(axios, {
-	baseUrl: "http://192.168.0.228:9500/api/",
+	baseUrl: url + "api",
 });
 
 app.use(router).use(vuetify)
@@ -52,8 +54,8 @@ app.config.globalProperties.$errorImage = 'https://developers.google.com/static/
 // app.config.globalProperties.$apiURL = "https://portal-api.mkthemedattractions.com.ph/api";
 
 
-app.config.globalProperties.$serverURL = "http://192.168.0.228:9500/";
-app.config.globalProperties.$apiURL = "http://192.168.0.228:9500/";
+app.config.globalProperties.$serverURL = url ;
+app.config.globalProperties.$apiURL = url + "api" ;
 
 
 app.mount("#app");
