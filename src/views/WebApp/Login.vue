@@ -167,6 +167,7 @@ export default {
 	methods: {
 		login() {
 			this.SnackBar_Data.loading 		= true;
+			this.$axios.get(this.$serverURL + "/sanctum/csrf-cookie");
 
 			this.$axios
 				.post( this.$serverURL + "api/" + "login", {
